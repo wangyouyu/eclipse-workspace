@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="postgres-jdbc-162f01b2e60-253b47faf4de6517" provider="postgresql" driver="postgres-jdbc" name="PostgreSQL - carTrip" save-password="true" show-system-objects="true" read-only="false">
+		<connection host="localhost" port="5433" server="" database="carTrip" url="jdbc:postgresql://localhost:5433/carTrip" user="postgres" password="BAUIJ1hMUQ8Qcuc=" type="dev">
+			<provider-property name="@dbeaver-show-non-default-db@" value="false"/>
+			<provider-property name="@dbeaver-switch-db-on-expand@" value="false"/>
+			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" save-password="false">
+				<property name="sshConnectTimeout" value="10000"/>
+				<property name="port" value="22"/>
+				<property name="implementation" value="jsch"/>
+				<property name="authType" value="PASSWORD"/>
+			</network-handler>
+			<network-handler type="PROXY" id="socks_proxy" enabled="false" save-password="false">
+				<property name="socks-port" value="1080"/>
+			</network-handler>
+			<network-handler type="CONFIG" id="postgre_ssl" enabled="false" save-password="false"/>
+		</connection>
+	</data-source>
+	<filters/>
+</data-sources>

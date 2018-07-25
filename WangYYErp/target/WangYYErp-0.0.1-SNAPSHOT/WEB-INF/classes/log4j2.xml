@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %L %M %logger{36} - %msg%n" />
+			
+		</Console>
+		
+		<RollingFile name="RollingFileall" fileName="${sys:user.home}/汇修应用日志/log.log" filePattern="${sys:user.home}/汇修应用日志/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log" append="true">
+			<ThresholdFilter level="all" onMatch="ACCEPT" onMismatch="DENY"/>
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy/>
+				<SizeBasedTriggeringPolicy size="10 MB"/>
+			</Policies>
+			<DefaultRolloverStrategy max="20"/>
+		</RollingFile>
+		
+	</Appenders>
+	<Loggers>
+		<logger name="java.sql" level="info" />
+		<logger name="org.jooq.impl.DS" level="info" />
+		<logger name="com.alibaba.druid.pool.DruidDataSource" level="info" />
+		<Root level="all">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="RollingFileall" />
+		</Root>
+	</Loggers>
+</Configuration>
